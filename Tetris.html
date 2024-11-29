@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>테트리스 과제</title>
+    <!-- !! 캔버스 생성 전에 자바스크립트 실행 시 getContext null 에러가 떠서 -->
+    <!-- !! 로드가 끝난 후에 실행되어야하므로 defer 를 넣었습니다.-->
+    <script defer src="tetris.js"></script>
+    <style>
+        * {
+            margin: 10px;
+            padding: 0;
+            overflow: hidden;
+        }
+        #canvas-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            width: 600px;
+            height: 700px
+        }
+        canvas {
+            width: 100%;
+            height: 98%;
+        }
+        #controls {
+            display: flex;
+            margin: 3px auto;
+            border: 1px solid black;
+            width: 30%;
+            min-width: 600px;
+        }
+        #controls button {
+            background-color: white;
+            border: 1px solid black;
+            padding: 30px;
+            flex: 1;
+            margin: 5px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container">
+        <canvas id="canvas" width="450" height="600" style="border: 1px solid black;"></canvas>
+    </div>
+    <div id="controls">
+        <button onclick="leftMoveClick()" id="left">좌</button>
+        <button onclick="rightMoveClick()" id="right">우</button>
+        <button onclick="rotateMoveClick()" id="rotate">회전</button>
+        <button onclick="downMoveClick()" id="down">하강</button>
+    </div>
+</body>
+</html>
